@@ -6,25 +6,30 @@ export class PhysicManager {
     }
 
     update(obj) {
+
         if (obj.move_x === 0 && obj.move_y === 0)
             return "stop";
-
         var newX = obj.pos_x + Math.floor(obj.move_x * obj.speed);
         var newY = obj.pos_y + Math.floor(obj.move_y * obj.speed);
 
         var ts = mapManager.getTilesetIdx(newX + obj.size_x / 2, newY + obj.size_y / 2);
         var e = this.entityAtXY(obj, newX, newY);
+
         if (e !== null && obj.onTouchEntity) {
+            console.log("1")
             obj.onTouchEntity(e);
         }
-        if (ts !== 7 && obj.onTouchMap) {
+        if (ts !== 22 && obj.onTouchMap) {
+            console.log("2")
             obj.onTouchMap(ts);
         }
 
-        if (ts === 7 && e === null) {
+        if (ts === 22 && e === null) {
             obj.pos_x = newX;
             obj.pos_y = newY;
+            console.log(obj.pos_y, obj.pos_x)
         } else {
+
             return "break";
         }
         return "move";
@@ -38,7 +43,7 @@ export class PhysicManager {
                     x > e.pos_x + e.size_x || y > e.pos_y + e.size_y) {
                     continue;
                 }
-                returne;
+                return e;
             }
         }
         return null;

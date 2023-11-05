@@ -1,5 +1,5 @@
 import {Entities} from "./entities.js";
-import {physicManager} from "./globals";
+import {physicManager} from "./globals.js";
 
 export class Enemy extends Entities {
     constructor() {

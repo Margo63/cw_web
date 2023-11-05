@@ -12,3 +12,6 @@ export let gameManager = new GameManager();
 export let eventsManager = new EventManager();
 export let physicManager = new PhysicManager();
 export let soundManager = new SoundManager();
+
+export var canvas = document.getElementById("canvasId");
+export var ctx = canvas.getContext("2d");

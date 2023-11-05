@@ -14,7 +14,7 @@ export class Player extends Entities {
             spriteManager.drawSprite(ctx, "hero_up", this.pos_x, this.pos_y)
         }
         this.update = function(){
-            physicManager.update()
+            physicManager.update(this)
         }
         this.onTouchEntity=function(obj){
             console.log(obj.name)
@@ -65,5 +65,5 @@ export class Player extends Entities {
 
 
 
-let player = new Player()
-console.log(player)
+// let player = new Player()
+// console.log(player)

@@ -2,7 +2,7 @@ import {Player} from "./player.js";
 import {Enemy} from "./enemy.js";
 import {Bonus} from "./bonus.js";
 import {Rocket} from "./rocket.js";
-import {mapManager, eventsManager, gameManager, spriteManager} from "./globals.js";
+import {mapManager, eventsManager, gameManager, spriteManager, ctx} from "./globals.js";
 
 export class GameManager{
     constructor() {
@@ -25,15 +25,24 @@ export class GameManager{
         this.player.move_x = 0;
         this.player.move_y = 0;
 
+
         if(eventsManager.action["up"]) this.player.move_y = -1
         if(eventsManager.action["down"]) this.player.move_y = 1
         if(eventsManager.action["left"]) this.player.move_x = -1
-        if(eventsManager.action["right"]) this.player.move_x = 1
+        if(eventsManager.action["right"]){
+            this.player.move_x = 1
+
+        }
+
+
 
         if(eventsManager.action["fire"]) this.player.fire();
 
         this.entities.forEach(function (e){
             try{
+                if(e.move_x === 1)
+                    console.log("right")
+               // console.log(e)
                 e.update();
             }catch(ex){
 
@@ -52,9 +61,9 @@ export class GameManager{
         this.draw(ctx);
     }
     draw(ctx){
-        console.log("gM draw")
+        //console.log("gM draw")
         for(let e = 0; e<this.entities.length; e++){
-            console.log()
+            //console.log()
             this.entities[e].draw(ctx)
         }
 
