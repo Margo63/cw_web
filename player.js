@@ -1,5 +1,6 @@
 import {Entities} from "./entities.js";
 import {Rocket} from "./rocket.js";
+import {gameManager, physicManager, spriteManager,} from "./globals.js";
 
 export class Player extends Entities {
     constructor() {
@@ -9,13 +10,18 @@ export class Player extends Entities {
         this.move_y = 0;
         this.speed = 1;
         this.draw = function(ctx){
-            spriteManager.drawSprite(ctx, "tank_left_1", this.pos_x, this.pos_y)
+
+            spriteManager.drawSprite(ctx, "hero_up", this.pos_x, this.pos_y)
         }
         this.update = function(){
-
+            physicManager.update()
         }
         this.onTouchEntity=function(obj){
-
+            console.log(obj.name)
+            if(obj.name.match(/star[\d]/)){
+                this.lifetime += 50;
+                obj.kill();
+            }
         }
         this.kill = function(){
 

@@ -1,4 +1,5 @@
 import {Entities} from "./entities.js";
+import {physicManager} from "./globals";
 
 export class Enemy extends Entities {
     constructor() {
@@ -11,7 +12,7 @@ export class Enemy extends Entities {
 
         }
         this.update = function(){
-
+            physicManager.update()
         }
         this.onTouchEntity=function(obj){
 

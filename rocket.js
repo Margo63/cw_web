@@ -1,4 +1,5 @@
 import {Entities} from "./entities.js";
+import {physicManager} from "./globals";
 
 export class Rocket extends Entities {
     constructor() {
@@ -10,13 +11,17 @@ export class Rocket extends Entities {
 
         }
         this.update = function(){
-
+            physicManager.update()
         }
         this.onTouchEntity=function(obj){
-
+            console.log(obj.name)
+            if(obj.name.match(/enemy[\d*]/) || obj.name.match(/player/) || obj.name.match(/rocket[\d*]/)){
+                obj.kill();
+            }
+            this.kill()
         }
         this.onTouchMap = function(idx){
-
+            this.kill();
         }
         this.kill = function(){
 

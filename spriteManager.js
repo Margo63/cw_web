@@ -1,10 +1,12 @@
+import {mapManager} from "./globals.js";
+
 export class SpriteManager {
-    constructor(mapManager) {
+    constructor() {
         this.image = new Image();
         this.sprites = new Array();
         this.imgLoaded = false;
         this.jsonLoaded = false;
-        this.mapManager = mapManager;
+
     }
 
     loadAtlas(atlasJson, atlasImg) {
@@ -15,7 +17,7 @@ export class SpriteManager {
                 mySelf.parseAtlas(request.responseText);
             }
         };
-        //console.log(this.mapManager)
+        console.log(mapManager)
         request.open("GET", atlasJson, true);
         request.send();
         this.loadImg(atlasImg);
@@ -24,6 +26,7 @@ export class SpriteManager {
     loadImg(imgName) {
         let mySelf = this
         this.image.onload = function () {
+
             mySelf.imgLoaded = true;
         }
         this.image.src = imgName
@@ -35,6 +38,7 @@ export class SpriteManager {
             var frame = atlas.frames[name].frame;
             this.sprites.push({name: name, x: frame.x, y: frame.y, w: frame.w, h: frame.h});
         }
+
         this.jsonLoaded = true;
     }
 
@@ -46,11 +50,13 @@ export class SpriteManager {
             }, 100)
         } else {
             var sprite = this.getSprite(name);
-            if (!this.mapManager.isVisible(x, y, sprite.w, sprite.h))
+
+            if (!mapManager.isVisible(x, y, sprite.w, sprite.h))
                 return
-            x -= this.mapManager.view.x;
-            y -= this.mapManager.view.y;
-            ctx.drawImage(this.image, sprite.x, sprite.y, sprite.w, sprite.h, x, y, sprite.w, sprite.h);
+            x -= mapManager.view.x;
+            y -= mapManager.view.y;
+            //console.log( sprite.x, sprite.y, sprite.w, sprite.h, x, y, sprite.w, sprite.h)
+            ctx.drawImage(this.image, x, y, sprite.w, sprite.h)//sprite.x, sprite.y, sprite.w, sprite.h, x, y, sprite.w, sprite.h);
 
         }
     }

@@ -1,3 +1,5 @@
+import {gameManager} from "./globals.js";
+
 export class MapManager {
     constructor() {
         this.mapData = null;
@@ -146,7 +148,8 @@ export class MapManager {
                     for (var i = 0; i < entities.objects.length; i++) {
                         var e = entities.objects[i];
                         try {
-                            var obj = Object.create(gameManager.factory[e.type]);
+                            console.log(gameManager.factory, e.type)
+                            var obj = gameManager.factory[e.type];//Object.create(gameManager.factory[e.type]);
 
                             obj.name = e.name;
                             obj.pos_x = e.x;
@@ -162,6 +165,7 @@ export class MapManager {
                         }
                     }
                 }
+
     }
 
     getTilesetIdx(x, y) {
