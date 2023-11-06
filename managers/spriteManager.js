@@ -1,4 +1,4 @@
-import {mapManager} from "./globals.js";
+import {mapManager} from "../globals.js";
 
 export class SpriteManager {
     constructor() {

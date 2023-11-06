@@ -1,5 +1,5 @@
 import {Entities} from "./entities.js";
-import {physicManager, spriteManager} from "./globals.js";
+import {gameManager, physicManager, spriteManager} from "../globals.js";
 
 export class Rocket extends Entities {
     constructor() {
@@ -8,13 +8,14 @@ export class Rocket extends Entities {
         this.move_y = 0;
         this.speed = 4;
         this.draw = function(ctx){
-            spriteManager.drawSprite(ctx, "hero_up", this.pos_x, this.pos_y)
+            spriteManager.drawSprite(ctx, "arrow", this.pos_x, this.pos_y)
         }
         this.update = function(){
-            physicManager.update()
+            //console.log("rocket update", this.move_x, this.move_y)
+            physicManager.update(this)
         }
         this.onTouchEntity=function(obj){
-            console.log(obj.name)
+            //console.log(obj.name)
             if(obj.name.match(/enemy[\d*]/) || obj.name.match(/player/) || obj.name.match(/rocket[\d*]/)){
                 obj.kill();
             }
@@ -24,7 +25,7 @@ export class Rocket extends Entities {
             this.kill();
         }
         this.kill = function(){
-
+            gameManager.kill(this)
         }
 
     }

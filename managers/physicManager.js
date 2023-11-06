@@ -1,4 +1,4 @@
-import {gameManager, mapManager} from "./globals.js";
+import {gameManager, mapManager} from "../globals.js";
 
 export class PhysicManager {
     constructor() {
@@ -6,9 +6,10 @@ export class PhysicManager {
     }
 
     update(obj) {
-
         if (obj.move_x === 0 && obj.move_y === 0)
             return "stop";
+
+
         var newX = obj.pos_x + Math.floor(obj.move_x * obj.speed);
         var newY = obj.pos_y + Math.floor(obj.move_y * obj.speed);
 
@@ -16,11 +17,11 @@ export class PhysicManager {
         var e = this.entityAtXY(obj, newX, newY);
 
         if (e !== null && obj.onTouchEntity) {
-            console.log("1")
+            //console.log("1")
             obj.onTouchEntity(e);
         }
         if (ts !== 22 && obj.onTouchMap) {
-            console.log("2")
+            //console.log("2")
             obj.onTouchMap(ts);
         }
 

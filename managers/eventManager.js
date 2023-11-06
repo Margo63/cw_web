@@ -1,4 +1,4 @@
-import {eventsManager} from "./globals.js";
+import {eventsManager} from "../globals.js";
 
 export class EventManager{
     constructor() {

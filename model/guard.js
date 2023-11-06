@@ -1,5 +1,5 @@
 import {Entities} from "./entities.js";
-import {gameManager, physicManager, spriteManager} from "./globals.js";
+import {gameManager, physicManager, spriteManager} from "../globals.js";
 
 export class Guard extends Entities {
     constructor() {
@@ -32,9 +32,7 @@ export class Guard extends Entities {
             physicManager.update(this)
         }
         this.onTouchEntity = function (obj) {
-
-
-
+            obj.kill()
         }
         this.onTouchMap = function (idx) {
             this.len = 0;

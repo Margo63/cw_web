@@ -1,4 +1,4 @@
-import {soundManager} from "./globals.js";
+import {soundManager} from "../globals.js";
 
 export class SoundManager {
     constructor() {

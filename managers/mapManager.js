@@ -1,4 +1,4 @@
-import {gameManager} from "./globals.js";
+import {gameManager} from "../globals.js";
 
 export class MapManager {
     constructor() {

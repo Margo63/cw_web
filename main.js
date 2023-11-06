@@ -1,7 +1,8 @@
 
 
-import {ctx, gameManager, mapManager, spriteManager} from "./globals.js";
-import {Player} from "./player.js";
+import { ctx,  gameManager, mapManager, spriteManager} from "./globals.js";
+import {Player} from "./model/player.js";
+import {GameManager} from "./managers/gameManager.js";
 
 // export var canvas = document.getElementById("canvasId");
 // export var ctx = canvas.getContext("2d");
@@ -22,9 +23,14 @@ import {Player} from "./player.js";
 // mapManager.parseEntities();
 // mapManager.draw(ctx);
 
-gameManager.loadAll();
+localStorage['next'] = "lvl2.html"
+gameManager.loadAll("../data/tilemap.json");
 gameManager.draw(ctx);
 gameManager.play();
+
+
+
+
 
 
 // let player = new Player();

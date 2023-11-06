@@ -1,9 +1,9 @@
-import {Player} from "./player.js";
-import {Enemy} from "./enemy.js";
-import {Bonus} from "./bonus.js";
-import {Rocket} from "./rocket.js";
-import {Guard} from "./guard.js";
-import {mapManager, eventsManager, gameManager, spriteManager, ctx} from "./globals.js";
+import {Player} from "../model/player.js";
+import {Enemy} from "../model/enemy.js";
+import {Bonus} from "../model/bonus.js";
+import {Rocket} from "../model/rocket.js";
+import {Guard} from "../model/guard.js";
+import {mapManager, eventsManager, gameManager, spriteManager, ctx, canvas} from "../globals.js";
 
 
 export class GameManager {
@@ -13,6 +13,8 @@ export class GameManager {
         this.fireNum = 0;
         this.player = null;
         this.laterKill = [];
+        this.interval = null;
+        this.FIRE_AMOUNT = 5;
     }
 
     initPlayer(obj) {
@@ -56,7 +58,7 @@ export class GameManager {
             try {
                 // if(e.move_x === 1)
                 //console.log("right")
-                // console.log(e)
+                //console.log(e)
 
                 e.update();
             } catch (ex) {
@@ -67,8 +69,7 @@ export class GameManager {
             var idx = this.entities.indexOf(this.laterKill[i]);
             if (idx > -1)
                 this.entities.splice(idx, 1);
-        }
-        ;
+        };
         if (this.laterKill.length > 0) {
             this.laterKill.length = 0;
         }
@@ -82,8 +83,19 @@ export class GameManager {
             }
         });
 
-        document.getElementById("lifetime").innerHTML = "lifetime: " + this.player.lifetime
-        document.getElementById("cookies").innerHTML = "cookies to find: " + cookies
+        document.getElementById("lifetime").innerHTML =this.player.lifetime
+        document.getElementById("cookies").innerHTML = cookies
+        if(cookies === 0){
+            clearInterval(this.interval);
+            alert("Level pass")
+            window.location=localStorage["next"]
+        }
+        if(this.player.lifetime <= 0){
+            clearInterval(this.interval);
+            alert("Level fail")
+            window.location=localStorage["next"]
+        }
+
     }
 
     draw(ctx) {
@@ -95,12 +107,12 @@ export class GameManager {
 
     }
 
-    loadAll() {
-        var canvas = document.getElementById("canvasId");
-        var ctx = canvas.getContext("2d");
+    loadAll(levelMap) {
+        // var canvas = document.getElementById("canvasId");
+        // var ctx = canvas.getContext("2d");
 
-        mapManager.loadMap("tilemap2.json");
-        spriteManager.loadAtlas("atlas.json", "img/spritesheet.png");
+        mapManager.loadMap(levelMap);
+        spriteManager.loadAtlas("../data/atlas.json", "../img/spritesheet.png");
 
         gameManager.factory['Player'] = Player;
         gameManager.factory["Enemy"] = Enemy;
@@ -115,7 +127,7 @@ export class GameManager {
     }
 
     play() {
-        setInterval(updateWorld, 100);
+        this.interval = setInterval(updateWorld, 100);
     }
 }
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="nextLvl()">Next</button>
+<br>
+<canvas id="canvasId" width="480" height="320"></canvas>
+<script src="../main.js" type="module"></script>
+<div>lives: <div id="lifetime"></div></div>
+<div>cookies to find: <div id="cookies"></div></div>
+
+<script>
+    function nextLvl(){
+        alert(document.getElementById("cookies"))
+        window.location = 'lvl2.html'
+    }
+
+</script>
+</body>
+</html>

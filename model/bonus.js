@@ -1,5 +1,5 @@
 import {Entities} from "./entities.js";
-import {gameManager, spriteManager} from "./globals.js";
+import {gameManager, spriteManager} from "../globals.js";
 
 export class Bonus extends Entities {
     constructor() {

@@ -59,6 +59,26 @@
         "w": 16,
         "h": 16
       }
+    },
+    "arrow": {
+      "frame": {
+        "x": 17,
+        "y": 17,
+        "w": 13,
+        "h": 5
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 13,
+        "h": 5
+      },
+      "sourceSize": {
+        "w": 13,
+        "h": 5
+      }
     }
   },
   "meta": {

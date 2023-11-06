@@ -1,5 +1,5 @@
 import {Entities} from "./entities.js";
-import {gameManager, physicManager, spriteManager} from "./globals.js";
+import {gameManager, physicManager, spriteManager} from "../globals.js";
 
 export class Enemy extends Entities {
     constructor() {
@@ -14,6 +14,7 @@ export class Enemy extends Entities {
         this.playerFollow = false;
         this.isInStart = true;
 
+
         this.len = 0;
         this.draw = function (ctx) {
             spriteManager.drawSprite(ctx, "enemy_down", this.pos_x, this.pos_y)
@@ -24,7 +25,10 @@ export class Enemy extends Entities {
         }
         this.onTouchEntity = function (obj) {
             if (obj.name.match(/player/)) {
-                console.log("enemy touch player")
+
+                this.pos_x = this.start_x;
+                this.pos_y = this.start_y;
+                obj.kill();
             } else {
                 this.len = 0;
                 this.move_x = 0;
@@ -73,25 +77,25 @@ export class Enemy extends Entities {
                 if (this.pos_x > gameManager.player.pos_x) {
                     this.move_x = -1;
                     this.move_y = 0
-                    return;
+                    //return;
                     // console.log("this.move_x = -1;")
                 }
                 if (this.pos_x < gameManager.player.pos_x) {
                     this.move_x = 1;
                     this.move_y = 0
                     //console.log("this.move_x = 1;")
-                    return;
+                    //return;
                 }
                 if (this.pos_y > gameManager.player.pos_y) {
                     this.move_y = -1;
                     this.move_x = 0
-                    return;
+                    //return;
                     //console.log("this.move_y = -1;")
                 }
                 if (this.pos_y < gameManager.player.pos_y) {
                     this.move_y = 1;
                     this.move_x = 0
-                    return;
+                    //return;
                     //console.log("this.move_y = 1;")
                 }
                 if (this.pos_x === gameManager.player.pos_x) this.move_x = 0;

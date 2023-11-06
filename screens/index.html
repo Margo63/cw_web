@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<!--<img src="NinjaAdventure/Backgrounds/Tilesets/TilesetField.png">-->
+<form id = "input_form">
+    <input id = "name" type="text"><button id="name_but" onclick="confirm()">Save name</button>
+</form>
+
+<div id="levels" >
+    <button id="lvl1" onclick="window.location = 'lvl1.html'" disabled>Level1</button>
+    <button id="lvl2" onclick="window.location = 'lvl2.html'" disabled>Level2</button>
+</div>
+<script>
+    function confirm(){
+        if(document.getElementById("name").value ==="")
+            return
+        localStorage["name"] = document.getElementById("name").value
+        document.getElementById("name_but").disabled = true
+        document.getElementById("lvl1").disabled = false
+        document.getElementById("lvl2").disabled = false
+
+    }
+</script>
+<!--<canvas id="canvasId" width="480" height="320"></canvas>-->
+<!--<script src="main.js" type="module"></script>-->
+<!--<p id="lifetime"></p><br>-->
+<!--<p id="cookies"></p>-->
+</body>
+</html>
