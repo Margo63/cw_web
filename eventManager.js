@@ -31,8 +31,8 @@ export class EventManager{
         }
 
         this.onKeyDown = function(event){
-            console.log("onKeyDown"+event.keyCode)
-           // console.log(eventsManager.bind)
+            //console.log("onKeyDown"+event.keyCode)
+            //console.log(event.keyCode)
 
             var action = eventsManager.bind[event.keyCode];
             if(action)
@@ -40,7 +40,7 @@ export class EventManager{
         }
 
         this.onKeyUp = function(event){
-            console.log("onKeyUp")
+            //console.log("onKeyUp")
             var action = eventsManager.bind[event.keyCode];
             if(action)
                 eventsManager.action[action] = false;

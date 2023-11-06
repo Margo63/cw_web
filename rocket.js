@@ -1,5 +1,5 @@
 import {Entities} from "./entities.js";
-import {physicManager} from "./globals.js";
+import {physicManager, spriteManager} from "./globals.js";
 
 export class Rocket extends Entities {
     constructor() {
@@ -8,7 +8,7 @@ export class Rocket extends Entities {
         this.move_y = 0;
         this.speed = 4;
         this.draw = function(ctx){
-
+            spriteManager.drawSprite(ctx, "hero_up", this.pos_x, this.pos_y)
         }
         this.update = function(){
             physicManager.update()

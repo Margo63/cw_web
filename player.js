@@ -8,7 +8,7 @@ export class Player extends Entities {
         this.lifetime = 100;
         this.move_x = 0;
         this.move_y = 0;
-        this.speed = 1;
+        this.speed = 2;
         this.draw = function(ctx){
 
             spriteManager.drawSprite(ctx, "hero_up", this.pos_x, this.pos_y)
@@ -17,17 +17,21 @@ export class Player extends Entities {
             physicManager.update(this)
         }
         this.onTouchEntity=function(obj){
-            console.log(obj.name)
+
             if(obj.name.match(/star[\d]/)){
+                //let life = document.getElementById("lifetime")
+                //console.log(obj.name)
                 this.lifetime += 50;
+                //life.innerHTML = this.lifetime.toString()
                 obj.kill();
             }
         }
         this.kill = function(){
-
+            gameManager.kill(this)
         }
         this.fire = function(){
-            let r = new Rocket()
+           // console.log("fireeee")
+             let r = new Rocket()
             r.size_x = 16;
             r.size_y = 16;
             r.name = "rocket"+(++gameManager.fireNum);
@@ -52,7 +56,7 @@ export class Player extends Entities {
                     r.pos_y = this.pos_y + this.size_y;
                     break;
             }
-            gameManager.entities.push(r);
+             gameManager.entities.push(r);
         }
 
     }

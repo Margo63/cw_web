@@ -12,7 +12,7 @@ export class MapManager {
         this.imgLoadCount = 0;
         this.imgLoaded = false;
         this.jsonLoaded = false;
-        this.view = {x: 0, y: 0, w: 800, h: 600};
+        this.view = {x: 0, y: 0, w: 480, h: 320};
 
     }
 
@@ -39,7 +39,10 @@ export class MapManager {
         this.tSize.y = this.mapData.tileheight;
         this.mapSize.x = this.xCount * this.tSize.x;
         this.mapSize.y = this.yCount * this.tSize.y;
+
         let mySelf = this
+
+
         for (var i = 0; i < this.mapData.tilesets.length; i++) {
             var img = new Image();
             img.onload = function () {
@@ -75,28 +78,28 @@ export class MapManager {
 
             if (this.tLayer === null)
                 for (var id = 0; id < this.mapData.layers.length; id++) {
-                    //console.log(id)
+                    console.log(id)
                     var layer = this.mapData.layers[id];
                     if (layer.type === "tilelayer") {
                         this.tLayer = layer;
-
                         break;
                     }
                 }
 
             for (var i = 0; i < this.tLayer.data.length; i++) {
+
                 if (this.tLayer.data[i] !== 0) {
                     var tile = this.getTile(this.tLayer.data[i]);
                     var pX = (i % this.xCount) * this.tSize.x;
-
                     var pY = Math.floor(i / this.xCount) * this.tSize.y;
 
                     if (!this.isVisible(pX, pY, this.tSize.x, this.tSize.y))
                         continue;
+
                     pX -= this.view.x;
                     pY -= this.view.y;
-                    ctx.drawImage(tile.img, tile.px, tile.py, this.tSize.x,
-                        this.tSize.y, pX, pY, this.tSize.x, this.tSize.y);
+                    //console.log(pX,pY)
+                    ctx.drawImage(tile.img, tile.px, tile.py, this.tSize.x, this.tSize.y, pX, pY, this.tSize.x, this.tSize.y);
                 }
             }
 
@@ -149,13 +152,15 @@ export class MapManager {
                         var e = entities.objects[i];
                         try {
                             console.log(gameManager.factory, e.type)
-                            var obj = gameManager.factory[e.type];//Object.create(gameManager.factory[e.type]);
+                            var obj = new gameManager.factory[e.type];//Object.create(gameManager.factory[e.type]);
 
                             obj.name = e.name;
                             obj.pos_x = e.x;
                             obj.pos_y = e.y;
                             obj.size_x = e.width;
                             obj.size_y = e.height;
+                            obj.start_x = e.x;
+                            obj.start_y = e.y;
 
                             gameManager.entities.push(obj);
                             if (obj.name === "player")
@@ -191,6 +196,8 @@ export class MapManager {
             this.view.y = y - (this.view.h / 2)
     }
 }
+
+
 
 // var canvas = document.getElementById("canvasId");
 // var ctx = canvas.getContext("2d");

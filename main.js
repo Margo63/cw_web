@@ -3,10 +3,16 @@
 import {ctx, gameManager, mapManager, spriteManager} from "./globals.js";
 import {Player} from "./player.js";
 
-
-// var image = new Image();
+// export var canvas = document.getElementById("canvasId");
+// export var ctx = canvas.getContext("2d");
+//
+//  var image = new Image();
 // image.src = "NinjaAdventure/Backgrounds/Tilesets/TilesetField.png"
-// ctx.drawImage(image, 10,10,1000,1000)
+// console.log(image)
+// image.onload = function (){
+//     ctx.drawImage(image, 10,100,1000,100)
+// }
+
 //let mapManager = new MapManager()
 
 
@@ -19,6 +25,8 @@ import {Player} from "./player.js";
 gameManager.loadAll();
 gameManager.draw(ctx);
 gameManager.play();
+
+
 // let player = new Player();
 // player.draw(ctx);
 

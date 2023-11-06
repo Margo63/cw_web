@@ -2,7 +2,7 @@ import {gameManager, mapManager} from "./globals.js";
 
 export class PhysicManager {
     constructor() {
-
+        this.SIZE = 16;
     }
 
     update(obj) {
@@ -27,7 +27,7 @@ export class PhysicManager {
         if (ts === 22 && e === null) {
             obj.pos_x = newX;
             obj.pos_y = newY;
-            console.log(obj.pos_y, obj.pos_x)
+            //console.log(obj.pos_y, obj.pos_x)
         } else {
 
             return "break";

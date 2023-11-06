@@ -1,469 +1,49 @@
 {
   "frames": {
+    "star": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 16
+      }
+    },
     "hero_up": {
       "frame": {
-        "x": 26,
-        "y": 17,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Beaf": {
-      "frame": {
-        "x": 0,
-        "y": 48,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Calamari": {
-      "frame": {
-        "x": 59,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Fish": {
-      "frame": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "FortuneCookie": {
-      "frame": {
-        "x": 17,
-        "y": 48,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Honey": {
-      "frame": {
-        "x": 59,
-        "y": 34,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Noodle": {
-      "frame": {
-        "x": 0,
-        "y": 65,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Nut": {
-      "frame": {
-        "x": 43,
-        "y": 16,
-        "w": 15,
-        "h": 15
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 15,
-        "h": 15
-      },
-      "sourceSize": {
-        "w": 15,
-        "h": 15
-      }
-    },
-    "Nut2": {
-      "frame": {
-        "x": 43,
-        "y": 0,
-        "w": 15,
-        "h": 15
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 15,
-        "h": 15
-      },
-      "sourceSize": {
-        "w": 15,
-        "h": 15
-      }
-    },
-    "Octopus": {
-      "frame": {
-        "x": 34,
-        "y": 65,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Onigiri": {
-      "frame": {
-        "x": 59,
-        "y": 17,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Seed1": {
-      "frame": {
-        "x": 17,
-        "y": 0,
-        "w": 8,
-        "h": 8
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 8,
-        "h": 8
-      },
-      "sourceSize": {
-        "w": 8,
-        "h": 8
-      }
-    },
-    "Seed2": {
-      "frame": {
-        "x": 17,
-        "y": 18,
-        "w": 8,
-        "h": 8
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 8,
-        "h": 8
-      },
-      "sourceSize": {
-        "w": 8,
-        "h": 8
-      }
-    },
-    "Seed3": {
-      "frame": {
-        "x": 17,
-        "y": 9,
-        "w": 8,
-        "h": 8
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 8,
-        "h": 8
-      },
-      "sourceSize": {
-        "w": 8,
-        "h": 8
-      }
-    },
-    "SeedBig1": {
-      "frame": {
-        "x": 59,
-        "y": 51,
-        "w": 10,
-        "h": 13
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 10,
-        "h": 13
-      },
-      "sourceSize": {
-        "w": 10,
-        "h": 13
-      }
-    },
-    "SeedBig2": {
-      "frame": {
-        "x": 43,
-        "y": 32,
-        "w": 10,
-        "h": 13
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 10,
-        "h": 13
-      },
-      "sourceSize": {
-        "w": 10,
-        "h": 13
-      }
-    },
-    "SeedBig3": {
-      "frame": {
-        "x": 30,
-        "y": 34,
-        "w": 10,
-        "h": 13
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 10,
-        "h": 13
-      },
-      "sourceSize": {
-        "w": 10,
-        "h": 13
-      }
-    },
-    "SeedLarge": {
-      "frame": {
-        "x": 0,
-        "y": 34,
-        "w": 14,
-        "h": 13
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 14,
-        "h": 13
-      },
-      "sourceSize": {
-        "w": 14,
-        "h": 13
-      }
-    },
-    "SeedLargeWhite": {
-      "frame": {
-        "x": 15,
-        "y": 34,
-        "w": 14,
-        "h": 13
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 14,
-        "h": 13
-      },
-      "sourceSize": {
-        "w": 14,
-        "h": 13
-      }
-    },
-    "Shrimp": {
-      "frame": {
-        "x": 34,
-        "y": 48,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Sushi": {
-      "frame": {
-        "x": 26,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Sushi2": {
-      "frame": {
-        "x": 17,
-        "y": 65,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "TeaLeaf": {
-      "frame": {
-        "x": 51,
-        "y": 65,
-        "w": 16,
-        "h": 16
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 16,
-        "h": 16
-      },
-      "sourceSize": {
-        "w": 16,
-        "h": 16
-      }
-    },
-    "Yakitori": {
-      "frame": {
         "x": 0,
         "y": 17,
+        "w": 16,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 16
+      }
+    },
+    "enemy_down": {
+      "frame": {
+        "x": 17,
+        "y": 0,
         "w": 16,
         "h": 16
       },
@@ -486,8 +66,8 @@
     "version": "Leshy SpriteSheet Tool v0.8.4",
     "image": "spritesheet.png",
     "size": {
-      "w": 75,
-      "h": 81
+      "w": 33,
+      "h": 33
     },
     "scale": 1
   }

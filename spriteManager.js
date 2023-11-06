@@ -17,7 +17,7 @@ export class SpriteManager {
                 mySelf.parseAtlas(request.responseText);
             }
         };
-        console.log(mapManager)
+
         request.open("GET", atlasJson, true);
         request.send();
         this.loadImg(atlasImg);
@@ -29,6 +29,7 @@ export class SpriteManager {
 
             mySelf.imgLoaded = true;
         }
+
         this.image.src = imgName
     }
 
@@ -56,7 +57,7 @@ export class SpriteManager {
             x -= mapManager.view.x;
             y -= mapManager.view.y;
             //console.log( sprite.x, sprite.y, sprite.w, sprite.h, x, y, sprite.w, sprite.h)
-            ctx.drawImage(this.image, x, y, sprite.w, sprite.h)//sprite.x, sprite.y, sprite.w, sprite.h, x, y, sprite.w, sprite.h);
+            ctx.drawImage(this.image,sprite.x, sprite.y, sprite.w, sprite.h, x, y, sprite.w, sprite.h);
 
         }
     }

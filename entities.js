@@ -4,5 +4,7 @@ export class Entities {
         this.pos_y = 0;
         this.size_x = 0;
         this.size_y = 0;
+        this.start_x = 0;
+        this.start_y = 0;
     }
 }
