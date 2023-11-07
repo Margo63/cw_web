@@ -3,7 +3,7 @@ import {Enemy} from "../model/enemy.js";
 import {Bonus} from "../model/bonus.js";
 import {Rocket} from "../model/rocket.js";
 import {Guard} from "../model/guard.js";
-import {mapManager, eventsManager, gameManager, spriteManager, ctx, canvas} from "../globals.js";
+import {mapManager, eventsManager, gameManager, spriteManager, ctx, canvas, soundManager} from "../globals.js";
 
 
 export class GameManager {
@@ -15,6 +15,7 @@ export class GameManager {
         this.laterKill = [];
         this.interval = null;
         this.FIRE_AMOUNT = 5;
+        this.LVL = 0;
     }
 
     initPlayer(obj) {
@@ -85,16 +86,22 @@ export class GameManager {
 
         document.getElementById("lifetime").innerHTML =this.player.lifetime
         document.getElementById("cookies").innerHTML = cookies
-        if(cookies === 0){
+        if(cookies === 0 || this.player.lifetime <= 0){
             clearInterval(this.interval);
-            alert("Level pass")
+            alert("Next lvl")
+            if(this.LVL===1){
+                localStorage["lvl1_cookies"] = cookies.toString()
+                localStorage["lvl1_lives"] =this.player.lifetime.toString()
+            }
+            if(this.LVL===2){
+                localStorage["lvl2_cookies"] = cookies.toString()
+                localStorage["lvl2_lives"] =this.player.lifetime.toString()
+            }
+
+
             window.location=localStorage["next"]
         }
-        if(this.player.lifetime <= 0){
-            clearInterval(this.interval);
-            alert("Level fail")
-            window.location=localStorage["next"]
-        }
+
 
     }
 
@@ -107,10 +114,10 @@ export class GameManager {
 
     }
 
-    loadAll(levelMap) {
+    loadAll(levelMap,lvl) {
         // var canvas = document.getElementById("canvasId");
         // var ctx = canvas.getContext("2d");
-
+        this.LVL = lvl;
         mapManager.loadMap(levelMap);
         spriteManager.loadAtlas("../data/atlas.json", "../img/spritesheet.png");
 
@@ -123,7 +130,8 @@ export class GameManager {
         mapManager.parseEntities();
         mapManager.draw(ctx);
         eventsManager.setup(canvas);
-
+        soundManager.init();
+        soundManager.loadArray(["../screens/NinjaAdventure/Sounds/Game/Fx.wav"]);
     }
 
     play() {

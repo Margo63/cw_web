@@ -27,6 +27,11 @@ export class Player extends Entities {
                 obj.kill();
             }
             if(obj.name.match(/enemy[\d*]/)){
+                obj.pos_x = obj.start_x;
+                obj.pos_y = obj.start_y;
+                obj.move_x = 0;
+                obj.move_y = 0;
+                obj.len = 0;
                 this.kill()
             }
         }

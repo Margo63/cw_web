@@ -43,13 +43,14 @@ export class SoundManager {
         for (var i = 0; i< array.length; i++){
             soundManager.load(array[i], function (){
                 if(array.length === Object.keys(soundManager.clips).length){
-                    for (var sd in soundManager.clips)
+                    for (let sd in soundManager.clips)
                         if(!soundManager.clips[sd].loaded) return;
                     soundManager.loaded = true;
 
                 }
             });
         }
+        console.log("loaded")
     }
 
     play(path, setting) {

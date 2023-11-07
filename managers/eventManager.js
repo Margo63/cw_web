@@ -1,4 +1,4 @@
-import {eventsManager} from "../globals.js";
+import {eventsManager, soundManager} from "../globals.js";
 
 export class EventManager{
     constructor() {
@@ -22,12 +22,13 @@ export class EventManager{
         }
 
         this.onMouseDown= function (event){
-            //console.log("onMouseDown")
-            eventsManager.action['fire'] = true;
+            console.log("onMouseDown")
+            //eventsManager.action['fire'] = true;
+            soundManager.play("../screens/NinjaAdventure/Sounds/Game/Fx.wav")
         }
         this.onMouseUp = function(event){
             //console.log("onMouseUp")
-            eventsManager.action["fire"] = false;
+            //eventsManager.action["fire"] = false;
         }
 
         this.onKeyDown = function(event){

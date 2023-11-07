@@ -14,7 +14,10 @@
 
 <script>
     function nextLvl(){
-        alert(document.getElementById("cookies"))
+        //alert(document.getElementById("cookies").innerText)
+
+        localStorage["lvl1_cookies"] = document.getElementById("cookies").innerText;
+        localStorage["lvl1_lives"] = document.getElementById("lifetime").innerText;
         window.location = 'lvl2.html'
     }
 

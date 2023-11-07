@@ -24,7 +24,7 @@ import {GameManager} from "./managers/gameManager.js";
 // mapManager.draw(ctx);
 
 localStorage['next'] = "lvl2.html"
-gameManager.loadAll("../data/tilemap.json");
+gameManager.loadAll("../data/tilemap.json",1);
 gameManager.draw(ctx);
 gameManager.play();
 

@@ -28,6 +28,7 @@ export class PhysicManager {
         if (ts === 22 && e === null) {
             obj.pos_x = newX;
             obj.pos_y = newY;
+            //if(obj.name.match(/player/))
             //console.log(obj.pos_y, obj.pos_x)
         } else {
 

@@ -5,6 +5,62 @@
     <title>Title</title>
 </head>
 <body>
+<div id = "record_table">
+    <table >
+        <tread>
+            <tr>
+                <th>Place</th>
+                <th>Name</th>
+                <th>Lives</th>
+                <th>Cookies</th>
+            </tr>
+        </tread>
+        <tbody id = "table">
 
+        </tbody>
+    </table>
+
+</div >
+
+<script>
+    if(localStorage["name"]){
+
+        let record_data;
+
+        if(localStorage["record_data"]===undefined){
+            record_data = []
+        }else{
+            record_data = JSON.parse(localStorage["record_data"])
+        }
+
+        el = {
+            "name": localStorage["name"],
+            "lives": parseInt(localStorage["lvl1_lives"])+parseInt(localStorage["lvl2_lives"]),
+            "cookies": parseInt(localStorage["lvl1_cookies"])+parseInt(localStorage["lvl2_cookies"])}
+
+        record_data.push(el)
+
+        localStorage["record_data"] = JSON.stringify(record_data)
+    }
+    let record_data = JSON.parse(localStorage["record_data"])
+
+    record_data.sort(function(a, b){
+        if(a.lives === b.lives)
+            return b.cookies - a.cookies;
+        return  b.lives - a.lives ;
+    });
+
+    let table = document.getElementById("table")
+    for(let i =0 ; i < 9;i++){
+        let row = `<tr>
+                        <td>№${i+1}</td>
+                        <td>${record_data[i].name}</td>
+                        <td>${record_data[i].lives}</td>
+                        <td>${record_data[i].cookies}</td>
+                    </tr>`
+        table.innerHTML+=row
+    }
+
+</script>
 </body>
 </html>

@@ -13,6 +13,9 @@
 <div>cookies to find: <div id="cookies"></div></div>
 <script>
     function finish(){
+
+        localStorage["lvl2_cookies"] = document.getElementById("cookies").innerText;
+        localStorage["lvl2_lives"] = document.getElementById("lifetime").innerText;
         window.location = 'record.html'
     }
 </script>
